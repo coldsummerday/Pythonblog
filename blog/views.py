@@ -1,8 +1,19 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Post,Category
 import markdown
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger#主页分页用
 
-# Create your views here.
+def home(request):
+    posts=Post.objects.all()
+    paginator=Paginator(posts,5)
+    page=request.GET.get('page')
+    try:
+        post_list=paginator.page(page)
+    except PageNotAnInteger:
+        post_list=paginator.page(1)
+    except EmptyPage:
+        post_list=paginator.paginator(paginator.num_pages)
+    return render(request,'blog/home.html',context={'post_list':post_list})
 
 def index(request):
     post_list=Post.objects.all()

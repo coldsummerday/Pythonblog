@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Black &amp; White</title>
+    <title>Cold Summer</title>
 
     <!-- meta -->
     <meta charset="UTF-8">
@@ -14,11 +14,15 @@
     <link rel="stylesheet" href="{% static 'blog/css/pace.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/friendly.css' %}">
+   <link rel="stylesheet" href="{% static 'blog/css/monokai_sublime.min.css' %}">
     <!-- js -->
     <script src="{% static 'blog/js/jquery-2.1.3.min.js' %}"></script>
     <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'blog/js/pace.min.js' %}"></script>
     <script src="{% static 'blog/js/modernizr.custom.js' %}"></script>
+    <script src="{% static 'blog/js/highlight.min.js' %}"></script>
+    <script >hljs.initHighlightingOnLoad();</script>
+
 </head>
 
 <body>
@@ -27,7 +31,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                    <h1><a href="index.html"><b>Black</b> &amp; White</a></h1>
+                    <h1><a href="{% url 'blog:home' %}"><b>Cold</b> Summer</a></h1>
                 </div>
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
@@ -40,10 +44,9 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="cl-effect-11"><a href="index.html" data-hover="Home">Home</a></li>
-                            <li class="cl-effect-11"><a href="full-width.html" data-hover="Blog">Blog</a></li>
-                            <li class="cl-effect-11"><a href="about.html" data-hover="About">About</a></li>
-                            <li class="cl-effect-11"><a href="contact.html" data-hover="Contact">Contact</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog:home' %}" data-hover="Home">Home</a></li>
+                            <li class="cl-effect-11"><a href="https://github.com/coldsummerday" data-hover="GitHub">GitHub</a></li>
+
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -111,6 +114,14 @@
 </div>
 <footer id="site-footer">
     <div class="container">
+        {% block page%}
+        {% endblock page%}
+    </div>
+    <div class="container">
+        <ul>
+        <li class="cl-effect-11"><a href="{% url 'blog:home' %}" data-hover="Home">友情链接：</a></li>
+        <li class="cl-effect-11"><a href="{% url 'blog:home' %}" data-hover="Home">俏姐博客</a></li>
+        </ul>
     </div>
 </footer>
 
@@ -119,10 +130,8 @@
     <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="full-width.html">Blog</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+               <li class="cl-effect-11"><a href="{% url 'blog:home' %}" data-hover="Home">Home</a></li>
+            <li class="cl-effect-11"><a href="https://github.com/coldsummerday" data-hover="GitHub">GitHub</a></li>
         </ul>
     </nav>
 </div>

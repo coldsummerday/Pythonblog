@@ -16,10 +16,11 @@
                             </time>
                         </a>
                     </span>
+                    <span class="post-tag"><a href="#">{{ post.tags.name }} </a></span>
                 </div>
             </header>
             <div class="entry-content clearfix">
-                <p>{{ post.body }}</p>
+                <p>{{ post.excerpt }}</p>
                 <div class="read-more cl-effect-14">
                     <a href="{{ post.get_absolute_url }}" class="more-link">继续阅读 <span
                             class="meta-nav">→</span></a>
@@ -30,3 +31,18 @@
         <div class="no-post">暂时还没有发布的文章！</div>
     {% endfor %}
 {% endblock main %}
+{% block page%}
+{% if post_list.object_list and post_list.paginator.num_pages > 1 %}
+      <div>
+      <ul class="pager">
+      {% if post_list.has_previous %}
+        <li><a href="?page={{ post_list.previous_page_number }}">上一页</a></li>
+      {% endif %}
+
+      {% if post_list.has_next %}
+        <li><a href="?page={{ post_list.next_page_number }}">下一页</a></li>
+      {% endif %}
+      </ul>
+      </div>
+    {% endif %}
+{% endblock page%}
