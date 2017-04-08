@@ -4,7 +4,7 @@ import markdown
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger#主页分页用
 
 def home(request):
-    posts=Post.objects.all()
+    posts=Post.objects.all().order_by('-created_time')
     paginator=Paginator(posts,5)
     page=request.GET.get('page')
     try:
