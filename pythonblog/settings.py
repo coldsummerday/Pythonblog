@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9578*d0$qq$qbo_(1ee!_p9*-+^khd3i4zb2b0w_f&&mq^w@d+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =False
 
-ALLOWED_HOSTS = ['23.106.155.192','www.haibin.website','23.106.155.192']
+ALLOWED_HOSTS = ['23.106.155.192','www.haibin.website','*']
 
 
 # Application definition
