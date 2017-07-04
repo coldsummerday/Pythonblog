@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block main %}
+    {% if error_msg %}
+        <p>{{error_msg}}</p>
+    {% endif %}
+
     {% for post in post_list %}
         <article class="post post-1">
             <header class="entry-header">
@@ -12,7 +16,7 @@
                     <span class="post-date">
                         <a href="#">
                             <time class="entry-date" datetime="{{ post.created_time }}">
-                                {{ post.created_time }}
+                                {{ post.created_time|post.view }}
                             </time>
                         </a>
                     </span>

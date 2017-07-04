@@ -11,6 +11,9 @@
                     <time class="entry-date" datetime="{{ post.created_time }}">{{ post.created_time }}</time>
                     </a>
                 </span>
+                <span class="comments-link">
+                    <a href="{{ post.get_absolute_url }}#comment-area">{{ post.comment_set.count }} 评论</a></span>
+                <span class="views-count"><a href="#">{{ post.views }} 阅读</a></span>
 
             </div>
         </header>
@@ -20,3 +23,9 @@
         {% include "blog/duoshuo.html" %}
     </article>
 {% endblock main %}
+{% block toc %}
+    <div class="widget widget-content">
+        <h3 class="widget-title"></h3>
+        {{ toc|safe }}
+    </div>
+{% endblock toc %}
