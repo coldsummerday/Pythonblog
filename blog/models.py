@@ -32,9 +32,9 @@ class Post(models.Model):
     modified_time=models.DateTimeField()
 
     excerpt=models.CharField(max_length=200,blank=True)
-    category=models.ForeignKey(Category)
+    category=models.ForeignKey(Category,on_delete =models.CASCADE)
     tags=models.ManyToManyField(Tag,blank=True)
-    author=models.ForeignKey(User)
+    author=models.ForeignKey(User,on_delete = models.CASCADE)
     views = models.PositiveIntegerField(default=0)
     def increase_views(self):
         self.views += 1

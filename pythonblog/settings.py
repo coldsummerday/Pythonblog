@@ -25,7 +25,7 @@ SECRET_KEY = '9578*d0$qq$qbo_(1ee!_p9*-+^khd3i4zb2b0w_f&&mq^w@d+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =True
 
-ALLOWED_HOSTS = ['23.106.155.192','www.haibin.website','*','haibin.website']
+ALLOWED_HOSTS = ['23.106.155.192','www.haibin.website','*','haibin.website','127.0.0.1']
 
 
 # Application definition
@@ -118,5 +118,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-STATIC_ROOT='/var/www/Pythonblog/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
