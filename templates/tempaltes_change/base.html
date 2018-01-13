@@ -5,10 +5,11 @@
 		<meta name="viewport" 
 			content="width=device-width, initial-scale=1.0,
 			user-scalable=no"/>
-		<title>寒夏</title>
+		<title>Coldsummer's blog</title>
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">  
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>  
     <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+   	<script src="js/tagcanvas.min.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     
@@ -27,10 +28,10 @@
                         </div>
                     </div>
                     <div class="col-md-8 header-text-top " id="about">
-                        <h1>寒夏凉秋</h1>
-                        <i>Coldsummer</i>
+                        <h1>Coldsummer</h1>
+                        <i>起风了 唯有努力生存</i>
                         <br />
-                        <i>一只呆呆的程序猿</i>
+                        <i>一个努力占领厨房的程序猿</i>
                     </div>
                 </div>
             </div>
@@ -39,10 +40,10 @@
     <div class="info-sec">
         <div class="container">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-8">
                     Send email to me at <a href="mailto:coldsummerday1211@gmail.com">coldsummerday1211@gmail.com</a></li>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-4">
                     <div class="social-link">
                         <a href="#" class="btn btn-default btn-xs"><i class="fa fa-github fa-2x"></i></a>
                         <a href="#" class="btn btn-default btn-xs"><i class="fa fa-weibo fa-2x"></i></a>
@@ -52,8 +53,151 @@
             </div>
         </div>
     </div>
+    <div class="my-nav">
+    	<div class="container">
+    		<div class="col-md-8">
+    			<nav class="navbar navbar-default" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="#">Home</a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+       	<li class="dropdown">
+       		<a href="#" class="dropdown-toggle" data-toggle = "dropdown">
+       			python大法
+       			<b class="caret"></b>
+       		</a>
+       		<ul class="dropdown-menu">
+       			 <li class="divider"></li>
+       			<li><a href="#">dsfsd</a></li>
+       			 <li class="divider"></li>
+       			<li></li>
+       		</ul>
+       	</li>
+		       	<li class="dropdown">
+       		<a href="#" class="dropdown-toggle" data-toggle = "dropdown">
+       			视觉与机器学习
+       			<b class="caret"></b>
+       		</a>
+       		<ul class="dropdown-menu">
+       			 <li class="divider"></li>
+       			<li><a href="#">dsfsd</a></li>
+       			 <li class="divider"></li>
+       			<li></li>
+       		</ul>
+       	</li>
+		  	<li class="dropdown">
+       		<a href="#" class="dropdown-toggle" data-toggle = "dropdown">
+       			算法与题解
+       			<b class="caret"></b>
+       		</a>
+       		<ul class="dropdown-menu">
+       			 <li class="divider"></li>
+       			<li><a href="#">dsfsd</a></li>
+       			 <li class="divider"></li>
+       			<li></li>
+       		</ul>
+       	</li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               杂记详谈
+               <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="#">jmeter</a></li>
+               <li><a href="#">EJB</a></li>
+               <li><a href="#">Jasper Report</a></li>
+               <li class="divider"></li>
+               <li><a href="#">分离的链接</a></li>
+               <li class="divider"></li>
+               <li><a href="#">另一个分离的链接</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div></nav>
+    			
+    		</div>
+    		<div class="col-md-4">
+    			<form class="navbar-form navbar-left" role="search">
+         <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+         </div>
+         <button type="submit" class="btn btn-default">搜索</button>
+      </form>    
+    		</div>
+    	</div>
+    	
+    </div>
+    <div class="container">
+    	<div class="row">
+    	    <main class="col-md-8">
+    	    	 <div class="blog-post">
+                    <h2>标题.</h2>
+                    <h4>Posted by <a href="#">admin</a> on 24th January 2015 </h4>
+                    <p>
+                        内容
+                    </p>
+                    <a href="#" class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
+                </div>
+                <!--
+                {% block main %}
+                {% endblock main %}
+                -->
+
+            </main>
+             <aside class="col-md-4">
+             	<div class="my-recent-posts">
+                         <h3 class="widget-title">最新文章</h3>
+                         <!--
+                         	  {% get_recent_posts as recent_post_list %}
+                    <ul>
+                        {% for post in recent_post_list %}
+                         <li>
+                                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                         </li>
+                        {% endfor %}
+                    </ul>
+                         -->
+                  
+                </div>
+                <div id="my-CanvasContainer">
+                 			<h2 >标签云</h2>
+      					<canvas width="300" height="300" id="myCanvas">
+      					<div id="tags">
+      					<ul>
+        					<li><a href="http://www.google.com" target="_blank">Google</a></li>
+        					<li><a href="/fish">Fish</a></li>
+        					<li><a href="/chips">Chips</a></li>
+        					<li><a href="/salt">Salt</a></li>
+        					<li><a href="/vinegar">Vinegar</a></li>
+     		 			</ul>
+    					</div>
+      					</canvas>
+   				</div>
+   				
+             	</aside>
+          	
+    		
+    	</div>
+    	
+    </div>
 	</body>
 
-
+ <script type="text/javascript">
+      window.onload = function() {
+        try {
+          TagCanvas.Start('myCanvas','tags',{
+            textColour: 'blue',
+            outlineColour: '#ff00ff',
+            reverse: true,
+            depth: 0.8,
+            maxSpeed: 0.05
+          });
+        } catch(e) {
+          // something went wrong, hide the canvas container
+          document.getElementById('my-CanvasContainer').style.display = 'none';
+        }
+      };
+    </script>
 </html>
 	
